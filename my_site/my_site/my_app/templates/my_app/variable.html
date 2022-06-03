@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Html</title>
+</head>
+<body>
+    <!-- double curly braces to fit variable. Full stop to get specific element  -->
+    {% comment %} | used for applying filters, filters must be learned in django documemtation {% endcomment %}
+    {% comment %} Tags are denoted by curlybraces wrapped around % signs, logic can be fit in here for for loops etc. {% endcomment %}
+    <h1>Variable.html</h1>
+    <ul>
+    {% for item  in some_list %}
+        <li>{{item}}</li>
+    {% endfor %}
+    </ul>
+    <ul>
+        {% for k,v  in some_dict.items %}
+            <li>{{k}}</li>
+        {% endfor %}
+    </ul>
+    {% comment %} If statement, endif only required for 1st if not each if {% endcomment %}
+    {% if user_logged_in %}
+        <h1>You're logged in </h1>
+    {% else %}
+        <h1>You're not logged in</h1>
+    {% endif %}
+    {% comment %} <h2>{{first_name | length}} {{last_name | upper}}</h2> {% endcomment %}
+    {% comment %} <h3>{{some_list.0}} {{some_dict.inside_key}}</h3> {% endcomment %}
+
+
+</body>
+</html>
